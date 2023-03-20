@@ -10,9 +10,12 @@ const ItemDetail = ({ item }) => {
         ></img>
       </div>
       <div className="flex justify-center">
-        <h2 className="mb-4 text-4xl">
+        <h2 className="mb-4 text-4xl">{item.name}</h2>
+      </div>
+      <div className="flex justify-center">
+        <h3 className="mb-4 text-4xl">
           <strong>${item.price}</strong>
-        </h2>
+        </h3>
       </div>
       <div className="flex justify-center">
         <Link

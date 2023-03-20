@@ -1,4 +1,5 @@
 import "./Bienvenido.scss";
+import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 
 export const Bienvenido = ({ greeting }) => {
   return (
@@ -17,6 +18,7 @@ export const Bienvenido = ({ greeting }) => {
           todo lo que necesitas para satisfacer tus gustos. ¡Salud!
         </h2>
       </section>
+      <ItemListContainer recom={true} category="" />
     </div>
   );
 };

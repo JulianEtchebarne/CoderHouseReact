@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '100': '100px',
+        100: "100px",
+        400: "400px",
       },
       colors: {
         "custom-gris": "#d3cdbf",

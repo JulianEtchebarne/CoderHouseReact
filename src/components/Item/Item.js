@@ -5,6 +5,9 @@ const Item = ({ item }) => {
     <li key={item.id}>
       <img src={item.img} alt={item.name}></img>
       <div className="flex justify-center">
+        <h2 className="mb-4 text-4xl">{item.name}</h2>
+      </div>
+      <div className="flex justify-center">
         <h2 className="mb-4 text-4xl">
           <strong>${item.price}</strong>
         </h2>

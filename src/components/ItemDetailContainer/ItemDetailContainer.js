@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { pedirProductoPorId } from "../../../helpers/pedirDatos";
+import { pedirProductoPorId } from "../../helpers/pedirDatos";
 import ItemDetail from "../ItemDetail/itemDetail";
+import DATA_BEBIDAS_COMPLETO from "../../data/DATA_BEBIDAS_COMPLETO.json";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -11,7 +12,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    pedirProductoPorId(Number(itemId))
+    pedirProductoPorId(Number(itemId), DATA_BEBIDAS_COMPLETO)
       .then((resp) => {
         setItem(resp);
       })
