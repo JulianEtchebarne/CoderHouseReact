@@ -8,12 +8,12 @@ export const Navbar = () => {
       <div className="header_container">
         <nav>
           <Link to="/">Inicio</Link>
-          <Link to="/catalogo">Catálogo</Link>
-          <Link to="/tabaqueria">Tabaquería</Link>
+          <Link to="/catalogo/Bebida">Catálogo</Link>
+          <Link to="/catalogo/Tabaqueria">Tabaquería</Link>
           <div className="logo_container">
             <img src="../logo512.png" alt="Logo" />
           </div>
-          <Link to="cocteleria">Coctelería</Link>
+          <Link to="catalogo/Cocteleria">Coctelería</Link>
           <Link to="puntosdeventa">Puntos de venta</Link>
           <Link to="contacto">Contacto</Link>
           <CartWidget />

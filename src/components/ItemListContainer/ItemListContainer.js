@@ -4,19 +4,21 @@ import { pedirDatos } from "../../helpers/pedirDatos";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
-export const ItemListContainer = ({ recom, category }) => {
+export const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const { categoryId } = useParams();
 
   useEffect(() => {
     setLoading(true);
 
-    pedirDatos(recom)
+    pedirDatos()
       .then((response) => {
-        if (category == "") {
+        if (!categoryId) {
           setProductos(response);
         } else {
-          setProductos(response.filter((prod) => prod.category === category));
+          setProductos(response.filter((prod) => prod.category === categoryId));
         }
       })
       .catch((error) => {
@@ -25,7 +27,7 @@ export const ItemListContainer = ({ recom, category }) => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [categoryId]);
 
   return (
     <div>

@@ -4,7 +4,7 @@
     "name": "Cailinlbul",
     "description": "Un whisky audaz y atrevido con notas de turba, miel y especias picantes.",
     "price": 40000,
-    "img": "imagenesInicio/whisky4.png",
+    "img": "https://i.imgur.com/NOR1vYj.png",
     "category": "Bebida"
   },
   {
@@ -12,7 +12,7 @@
     "name": "Blue Label",
     "description": "Un whisky refinado y complejo con aromas de frutas secas, chocolate oscuro y notas de humo de turba ahumada en el fondo.",
     "price": 90000,
-    "img": "imagenesInicio/whisky3.png",
+    "img": "https://i.imgur.com/zg3tRBV.png",
     "category": "Bebida"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Royal Reserve",
     "description": "Un whisky elegante y suave con sabores de vainilla, caramelo y un toque sutil de roble ahumado.",
     "price": 35000,
-    "img": "imagenesInicio/whisky5.png",
+    "img": "https://i.imgur.com/Si2GaUg.png",
     "category": "Bebida"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Beefeater",
     "description": "Gin",
     "price": 6000,
-    "img": "imagenesInicio/beefeater.png",
+    "img": "https://i.imgur.com/BSi7sGK.png",
     "category": "Bebida"
   },
   {
@@ -36,7 +36,7 @@
     "name": "Habanos Cienfuegos",
     "description": "Habano",
     "price": 4000,
-    "img": "imagenesInicio/cienfuegos_habano.png",
+    "img": "https://i.imgur.com/kDVx8z3.png",
     "category": "Tabaqueria"
   },
   {
@@ -44,7 +44,7 @@
     "name": "Vaso transparente",
     "description": "vaso transparente para utilizar en tragos",
     "price": 600,
-    "img": "imagenesInicio/vaso_transparente.png",
+    "img": "https://i.imgur.com/GgcmEmN.png",
     "category": "Cocteleria"
   }
 ]

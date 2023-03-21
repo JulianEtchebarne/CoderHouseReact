@@ -14,7 +14,7 @@ const Item = ({ item }) => {
       </div>
       <div className="flex justify-center">
         <Link
-          to={`/catalogo/${item.id}`}
+          to={`/detalle/${item.id}`}
           className="btn rounded bg-blue-500 px-4 py-2 hover:bg-blue-700"
         >
           Ver más
