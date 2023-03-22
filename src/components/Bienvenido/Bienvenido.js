@@ -6,7 +6,7 @@ export const Bienvenido = ({ greeting }) => {
     <div>
       <section>
         <img
-          src="imagenesInicio/fondo.png"
+          src="fondo.png"
           className="imagenPrincipalFondo"
           alt="fondo Web"
         ></img>
