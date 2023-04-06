@@ -6,6 +6,9 @@ module.exports = {
       spacing: {
         100: "100px",
         400: "400px",
+        350: "350px",
+        237: "237px",
+        4000: "4000px",
       },
       colors: {
         "custom-gris": "#d3cdbf",

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Cailinlbul",
+    "description": "Un whisky audaz y atrevido con notas de turba, miel y especias picantes.",
+    "price": 40000,
+    "img": "https://i.imgur.com/NOR1vYj.png",
+    "category": "Bebida",
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "name": "Blue Label",
+    "description": "Un whisky refinado y complejo con aromas de frutas secas, chocolate oscuro y notas de humo de turba ahumada en el fondo.",
+    "price": 90000,
+    "img": "https://i.imgur.com/zg3tRBV.png",
+    "category": "Bebida",
+    "stock": 10
+  },
+  {
+    "id": 3,
+    "name": "Royal Reserve",
+    "description": "Un whisky elegante y suave con sabores de vainilla, caramelo y un toque sutil de roble ahumado.",
+    "price": 35000,
+    "img": "https://i.imgur.com/Si2GaUg.png",
+    "category": "Bebida",
+    "stock": 10
+  }
+]

@@ -5,7 +5,8 @@
     "description": "Un whisky audaz y atrevido con notas de turba, miel y especias picantes.",
     "price": 40000,
     "img": "https://i.imgur.com/NOR1vYj.png",
-    "category": "Bebida"
+    "category": "Bebida",
+    "stock": 20
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "description": "Un whisky refinado y complejo con aromas de frutas secas, chocolate oscuro y notas de humo de turba ahumada en el fondo.",
     "price": 90000,
     "img": "https://i.imgur.com/zg3tRBV.png",
-    "category": "Bebida"
+    "category": "Bebida",
+    "stock": 35
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "description": "Un whisky elegante y suave con sabores de vainilla, caramelo y un toque sutil de roble ahumado.",
     "price": 35000,
     "img": "https://i.imgur.com/Si2GaUg.png",
-    "category": "Bebida"
+    "category": "Bebida",
+    "stock": 2
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "description": "Gin",
     "price": 6000,
     "img": "https://i.imgur.com/BSi7sGK.png",
-    "category": "Bebida"
+    "category": "Bebida",
+    "stock": 0
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "description": "Habano",
     "price": 4000,
     "img": "https://i.imgur.com/kDVx8z3.png",
-    "category": "Tabaqueria"
+    "category": "Tabaqueria",
+    "stock": 13
   },
   {
     "id": 6,
@@ -45,6 +50,16 @@
     "description": "vaso transparente para utilizar en tragos",
     "price": 600,
     "img": "https://i.imgur.com/GgcmEmN.png",
-    "category": "Cocteleria"
+    "category": "Cocteleria",
+    "stock": 300
+  },
+  {
+    "id": 7,
+    "name": "Habanos Cienfuegos",
+    "description": "Habano",
+    "price": 4000,
+    "img": "https://i.imgur.com/kDVx8z3.png",
+    "category": "Tabaqueria",
+    "stock": 10
   }
 ]

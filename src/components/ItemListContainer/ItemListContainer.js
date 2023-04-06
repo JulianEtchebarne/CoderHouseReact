@@ -1,24 +1,25 @@
 import "./ItemListContainer.scss";
 import { useState, useEffect } from "react";
 import { pedirDatos } from "../../helpers/pedirDatos";
-import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({ recom, category }) => {
+  if (recom) {
+  } else {
+    recom = false;
+  }
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const { categoryId } = useParams();
 
   useEffect(() => {
     setLoading(true);
 
-    pedirDatos()
+    pedirDatos(recom)
       .then((response) => {
-        if (!categoryId) {
+        if (category == "") {
           setProductos(response);
         } else {
-          setProductos(response.filter((prod) => prod.category === categoryId));
+          setProductos(response.filter((prod) => prod.category === category));
         }
       })
       .catch((error) => {
@@ -27,14 +28,12 @@ export const ItemListContainer = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [categoryId]);
+  }, []);
 
   return (
     <div>
-      <div className="flex bg-custom-gris p-100">
-        <ul>
-          {loading ? <h1>Cargando...</h1> : <ItemList items={productos} />}
-        </ul>
+      <div className=" h-full bg-custom-gris pl-100 pt-100 pb-100">
+        {loading ? <h1>Cargando...</h1> : <ItemList items={productos} />}
       </div>
     </div>
   );
