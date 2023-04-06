@@ -22,7 +22,7 @@ const Cart = () => {
           <hr />
         </div>
       ))}
-      <h3 className="font-bold">TOTAl: ${totalCompra()}</h3>
+      <h3 className="font-bold">TOTAL: ${totalCompra()}</h3>
       <button onClick={vaciarCarrito}>Vaciar carrito</button>
     </div>
   );
