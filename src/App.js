@@ -7,28 +7,19 @@ import PuntosDeVenta from "./components/Puntos de Venta/PuntosDeVenta";
 import Tabaqueria from "./components/Tabaqueria/Tabaqueria";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { CartProvider } from "./Context/CartContext";
 import Cart from "./components/Cart/Cart";
+import LoginScreen from "./components/LoginScreen/LoginScreen";
+import { LoginProvider } from "./Context/LoginContext";
+import { CartProvider } from "./Context/CartContext";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Navbar />
-
-        <Routes>
-          <Route path="/" element={<Bienvenido greeting="AOLCC" />} />
-          <Route path="/catalogo/" element={<Catalogo />} />
-          <Route path="/catalogo/:itemId" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/cocteleria" element={<Cocteleria />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/puntosdeventa" element={<PuntosDeVenta />} />
-          <Route path="/tabaqueria" element={<Tabaqueria />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+    <LoginProvider>
+      <CartProvider>
+        <AppRouter></AppRouter>
+      </CartProvider>
+    </LoginProvider>
   );
 }
 

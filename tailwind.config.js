@@ -9,6 +9,8 @@ module.exports = {
         350: "350px",
         237: "237px",
         4000: "4000px",
+        160: "160px",
+        "26rem": "26rem",
       },
       colors: {
         "custom-gris": "#d3cdbf",

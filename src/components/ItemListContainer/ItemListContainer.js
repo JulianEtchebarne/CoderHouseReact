@@ -31,8 +31,8 @@ export const ItemListContainer = ({ recom, category }) => {
   }, []);
 
   return (
-    <div>
-      <div className=" h-full bg-custom-gris pl-100 pt-100 pb-100">
+    <div className="h-max">
+      <div className=" h-full bg-custom-gris pt-5 pb-160">
         {loading ? <h1>Cargando...</h1> : <ItemList items={productos} />}
       </div>
     </div>

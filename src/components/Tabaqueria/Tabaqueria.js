@@ -1,4 +1,3 @@
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 
 const Tabaqueria = () => {
