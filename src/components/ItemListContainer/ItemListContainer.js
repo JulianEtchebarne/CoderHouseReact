@@ -1,7 +1,8 @@
 import "./ItemListContainer.scss";
 import { useState, useEffect } from "react";
-import { pedirDatos } from "../../helpers/pedirDatos";
 import ItemList from "../ItemList/ItemList";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 export const ItemListContainer = ({ recom, category }) => {
   if (recom) {
@@ -14,16 +15,18 @@ export const ItemListContainer = ({ recom, category }) => {
   useEffect(() => {
     setLoading(true);
 
-    pedirDatos(recom)
-      .then((response) => {
-        if (category == "") {
-          setProductos(response);
-        } else {
-          setProductos(response.filter((prod) => prod.category === category));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
+    const productosRef = collection(db, "productos");
+    const q =
+      category == ""
+        ? productosRef
+        : query(productosRef, where("category", "==", category));
+    getDocs(q)
+      .then((res) => {
+        const docs = res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+
+        setProductos(docs);
       })
       .finally(() => {
         setLoading(false);

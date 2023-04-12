@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { LoginContext } from "../../Context/LoginContext";
 
 const LoginScreen = () => {
-  const { user, login } = useContext(LoginContext);
+  const { login } = useContext(LoginContext);
   const [values, setValues] = useState({
     email: "",
     contrasena: "",
