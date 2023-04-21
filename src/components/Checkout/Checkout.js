@@ -1,9 +1,13 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { Navigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const Checkout = () => {
-  const { cart, totalCantidadCart } = useContext(CartContext);
+  const { cart, totalCantidadCart, vaciarCarrito } = useContext(CartContext);
+
+  const [orderId, setOrderId] = useState(null);
 
   const [values, setValues] = useState({
     nombre: "",
@@ -22,6 +26,13 @@ const Checkout = () => {
       fecha: new Date(),
     };
 
+    const ordersRef = collection(db, "orders");
+
+    addDoc(ordersRef, orden).then((doc) => {
+      setOrderId(doc.id);
+      vaciarCarrito();
+    });
+
     console.log("Submit", orden);
   };
 
@@ -31,6 +42,16 @@ const Checkout = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  if (orderId) {
+    return (
+      <div>
+        <h2 className="mt-5">Tu orden se regustró correctamente!</h2>
+        <hr />
+        <p>Tu número de orden es: {orderId}</p>
+      </div>
+    );
+  }
 
   if (cart.lenght === 0) {
     return <Navigate to="/" />;
