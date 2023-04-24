@@ -13,9 +13,7 @@ export const CartWidget = () => {
         className="cartWidgetClass"
         alt="cartWidget"
       ></img>
-      <span style={{ color: "red", position: "absolute", marginLeft: "100px" }}>
-        {totalCantidadCart()}
-      </span>
+      <span className="white absloute ml-100">{totalCantidadCart()}</span>
     </Link>
   );
 };

@@ -1,0 +1,19 @@
+div ul {
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+}
+
+div ul li {
+  display: inline-block;
+  margin-right: 90px;
+}
+
+.contenedorSection {
+  background-color: #d3cdbf;
+  padding: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=ItemListContainer.css.map */

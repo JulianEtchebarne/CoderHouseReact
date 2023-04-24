@@ -1,0 +1,37 @@
+section {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section h1 {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+}
+
+section h2 {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.imagenPrincipalFondo {
+  padding-top: 95px;
+  padding-left: 616px;
+  height: 49rem;
+  background-color: #121212;
+}
+/*# sourceMappingURL=Bienvenido.css.map */

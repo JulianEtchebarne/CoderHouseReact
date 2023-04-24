@@ -34,6 +34,7 @@ const ItemDetail = ({ item }) => {
       <div className="flex justify-center">
         <h2 className="mb-4 text-4xl">{item.name}</h2>
       </div>
+      <div className="flex justify-center">{item.description}</div>
       <div className="flex justify-center">
         <h3 className="mb-4 text-4xl">
           <strong>${item.price}</strong>
@@ -42,27 +43,32 @@ const ItemDetail = ({ item }) => {
       <div className="flex justify-center">
         <Link
           to={`/catalogo/${item.id}`}
-          className="btn rounded bg-blue-500 px-4 py-2 hover:bg-blue-700"
+          className="btn rounded bg-blue-500 px-4 py-2  hover:bg-blue-700"
         >
           Ver más
         </Link>
       </div>
-      <button onClick={handleVolver} className="btn rounded px-4 py-2">
-        Volver
-      </button>
+      <div className="mt-5 flex justify-center">
+        <button
+          onClick={handleVolver}
+          className="btn flex justify-center rounded px-4 py-2"
+        >
+          Volver
+        </button>
 
-      {isInCart(item.id) ? (
-        <Link to="/cart" className="btn">
-          Terminar mi compra
-        </Link>
-      ) : (
-        <ItemCount
-          maximo={item.stock}
-          cantidad={cantidad}
-          setCantidad={setCantidad}
-          handleAgregar={handleAgregar}
-        />
-      )}
+        {isInCart(item.id) ? (
+          <Link to="/cart" className="ml-5 bg-green-500 py-2 px-4">
+            Terminar mi compra
+          </Link>
+        ) : (
+          <ItemCount
+            maximo={item.stock}
+            cantidad={cantidad}
+            setCantidad={setCantidad}
+            handleAgregar={handleAgregar}
+          />
+        )}
+      </div>
     </div>
   );
 };

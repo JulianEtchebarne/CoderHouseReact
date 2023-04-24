@@ -23,7 +23,7 @@ const ItemCount = ({ maximo, cantidad, setCantidad, handleAgregar }) => {
       </button>
       <button
         onClick={handleAgregar}
-        className="btn bg-green-500 py-2 px-4 font-semibold hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+        className="ml-5 bg-green-500 py-2 px-4 font-semibold hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
       >
         Agregar al carrito
       </button>

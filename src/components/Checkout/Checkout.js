@@ -1,7 +1,15 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { Navigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  writeBatch,
+  query,
+  where,
+  documentId,
+  getDocs,
+} from "firebase/firestore";
 import { db } from "../../firebase/config";
 
 const Checkout = () => {
@@ -15,8 +23,13 @@ const Checkout = () => {
     email: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const batch = writeBatch(db);
+
+    const ordersRef = collection(db, "orders");
+    const productosRef = collection(db, "productos");
 
     //valiaciones
     const orden = {
@@ -26,14 +39,45 @@ const Checkout = () => {
       fecha: new Date(),
     };
 
-    const ordersRef = collection(db, "orders");
+    //Agregar orden a FIREBASE
 
-    addDoc(ordersRef, orden).then((doc) => {
-      setOrderId(doc.id);
-      vaciarCarrito();
+    const itemsRef = query(
+      productosRef,
+      where(
+        documentId(),
+        "in",
+        cart.map((prod) => prod.id)
+      )
+    );
+
+    const sinStock = [];
+
+    const response = await getDocs(itemsRef);
+
+    response.docs.forEach((doc) => {
+      const item = cart.find((prod) => prod.id === doc.id);
+
+      if (doc.data().stock >= item.cantidad) {
+        batch.update(doc.ref, {
+          stock: doc.data().stock - item.cantidad,
+        });
+      } else {
+        sinStock.push(item);
+      }
     });
 
-    console.log("Submit", orden);
+    if (sinStock.length === 0) {
+      await batch.commit();
+      addDoc(ordersRef, orden)
+        //Vaciar carrito y referenciar el ID de la compra
+        .then((doc) => {
+          setOrderId(doc.id);
+          vaciarCarrito();
+        });
+    } else {
+      setOrderId(null);
+      alert("Hay items sin stock");
+    }
   };
 
   const handleInputChange = (e) => {
@@ -46,7 +90,7 @@ const Checkout = () => {
   if (orderId) {
     return (
       <div>
-        <h2 className="mt-5">Tu orden se regustró correctamente!</h2>
+        <h2 className="mt-5">Tu orden se registró correctamente!</h2>
         <hr />
         <p>Tu número de orden es: {orderId}</p>
       </div>
@@ -59,7 +103,7 @@ const Checkout = () => {
 
   return (
     <div>
-      <h2 className="mt-6">Checkout</h2>
+      <h2>Checkout</h2>
       <hr />
 
       <form onSubmit={handleSubmit}>

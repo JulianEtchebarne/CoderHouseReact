@@ -1,0 +1,10 @@
+.cartWidgetClass {
+  -webkit-transform: translate(-40%, -50%);
+          transform: translate(-40%, -50%);
+  position: absolute;
+  padding-top: 15px;
+  left: 66%;
+  width: 85px;
+  height: 85px;
+}
+/*# sourceMappingURL=CartWidget.css.map */

@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
   }, [itemId]);
 
   return (
-    <div className="h-screen bg-custom-gris">
+    <div className="mt-n4.25rem h-screen bg-custom-gris">
       {loading ? <hr></hr> : <ItemDetail item={item} />}
     </div>
   );

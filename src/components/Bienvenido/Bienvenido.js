@@ -4,7 +4,7 @@ import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 export const Bienvenido = ({ greeting }) => {
   return (
     <div>
-      <section>
+      <section className="mt-n4.25rem">
         <img
           src="fondo.png"
           className="imagenPrincipalFondo"
